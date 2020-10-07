@@ -8,7 +8,7 @@ import java.util.Formatter;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        BufferedReader reader = new BufferedReader( new InputStreamReader(System.in));
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         System.out.println("Input first value");
         String sValue1 = reader.readLine();
@@ -18,17 +18,15 @@ public class Main {
         String sValue2 = reader.readLine();
         Integer value2 = Integer.parseInt(sValue2);
 
-        if(!value1.equals(value2)) {
+        if (!value1.equals(value2)) {
             Formatter formatter = new Formatter();
-            if(value1 > value2) {
+            if (value1 > value2) {
                 formatter.format("Число %s больше %s", value1, value2);
-            }
-            else {
+            } else {
                 formatter.format("Число %s меньше %s", value1, value2);
             }
             System.out.println(formatter);
-        }
-        else {
+        } else {
             System.out.println("Введные числа равны");
         }
 
