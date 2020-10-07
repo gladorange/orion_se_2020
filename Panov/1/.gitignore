@@ -1,0 +1,10 @@
+/*.iml
+/.idea/
+*.sw[poj]
+/logs/
+/target/
+/webdata/
+/bin/
+/.classpath
+/.project
+.m2/
