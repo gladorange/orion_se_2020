@@ -1,6 +1,6 @@
 public class Main {
 
-    final static short numbersCount = 2;
+    final static short NUMBERS_COUNT = 2;
 
     public static void main(String[] args) {
         if (!isValid(args)) {
@@ -27,7 +27,7 @@ public class Main {
     }
 
     static boolean isValid(String[] args) {
-        if (numbersCount != args.length)
+        if (NUMBERS_COUNT != args.length)
             return false;
         Integer firstNumber = tryParseInt(args[0]);
         Integer secondNumber = tryParseInt(args[1]);
