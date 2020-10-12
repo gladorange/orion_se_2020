@@ -9,13 +9,9 @@ public class Contrast {
             nums[i] = random.nextInt();
             System.out.println(nums[i]);
         }
-        for (int i = 0; i < 10; i++) {
-            for (int j = 1; j < nums.length; j++) {
-                compareNumbers(nums[i], nums[j]);
-                i++;
-            }
+        for (int i = 1; i < nums.length; i++) {
+            compareNumbers(nums[i-1], nums[i]);
         }
-
     }
 
     static void compareNumbers(int number, int numberTwo) {

@@ -16,13 +16,10 @@ public class Magic {
 
     }
 
-     static boolean isMagicNumber(int number) {
+     static void isMagicNumber(int number) {
             if ((number / 10) == (number % 10) && (number != 0)) {
                 System.out.println("Число " + number + " - магическое!");
-                return true;
             }
-            else
-                return false;
     }
 
 }
