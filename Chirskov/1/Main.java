@@ -3,18 +3,22 @@ public class Main {
     final static short NUMBERS_COUNT = 2;
 
     public static void main(String[] args) {
-        if (!isValid(args)) {
-            System.out.println("Input Error!");
+        if (NUMBERS_COUNT != args.length) {
+            System.out.println("Количество введёных аргументов не равно " + NUMBERS_COUNT);
             return;
         }
-        int firstNumber = Integer.parseInt(args[0]);
-        int secondNumber = Integer.parseInt(args[1]);
+        Integer firstNumber = tryParseInt(args[0]);
+        Integer secondNumber = tryParseInt(args[1]);
+        if (firstNumber == null || secondNumber == null) {
+            return;
+        }
 
-        if (firstNumber > secondNumber)
+        if (firstNumber > secondNumber) {
             System.out.println("Число " + firstNumber + " больше " + secondNumber);
-        else if (firstNumber < secondNumber)
+        }
+        else if (firstNumber < secondNumber) {
             System.out.println("Число " + firstNumber + " меньше " + secondNumber);
-
+        }
         System.out.println("Сумма чисел равна " + sumOfTwoNumbers(firstNumber, secondNumber));
     }
 
@@ -22,18 +26,9 @@ public class Main {
         try {
             return new Integer(s);
         } catch (NumberFormatException e) {
+            System.out.println(s + " не удалось преобразовать в Integer");
             return null;
         }
-    }
-
-    static boolean isValid(String[] args) {
-        if (NUMBERS_COUNT != args.length)
-            return false;
-        Integer firstNumber = tryParseInt(args[0]);
-        Integer secondNumber = tryParseInt(args[1]);
-        if (firstNumber == null || secondNumber == null)
-            return false;
-        return true;
     }
 
     static int sumOfTwoNumbers(int firstNumber, int secondNumber)
