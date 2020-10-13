@@ -25,15 +25,14 @@ public class Main {
 
     public static class PrintInfo {
         public PrintInfo(SimpleOperationInteger object) {
-            String biggerOrLessStr = "";
+            if (object.isEquals())
+                System.out.println("Values is equals");
+            else {
+                String biggerOrLessStr = object.firstIsBigger() ? "bigger" : "less";
 
-            if (object.firstIsBigger())
-                biggerOrLessStr = "bigger";
-            else
-                biggerOrLessStr = "less";
-
-            System.out.format("Number %s is %s than the %s number\n",
-                    object.getFirstValue().toString(), biggerOrLessStr, object.getSecondValue().toString());
+                System.out.format("Number %s is %s than the %s number\n",
+                        object.getFirstValue().toString(), biggerOrLessStr, object.getSecondValue().toString());
+            }
 
             System.out.format("Sum of the numbers: %s\n", object.sum().toString());
         }
@@ -69,6 +68,10 @@ public class Main {
             return _secondValue;
         }
 
+        public boolean isEquals() {
+            return _firstValue.equals(_secondValue);
+        }
+
         private Integer _firstValue;
         private Integer _secondValue;
     }
@@ -76,7 +79,7 @@ public class Main {
     public static void main(String[] args) {
         InputInfo inputInfo;
         try {
-            inputInfo = new InputInfo("3", "20");
+            inputInfo = new InputInfo("-31", "-20");
         }
         catch (NullPointerException ex) {
             System.err.println("Exception: error create of object InputInfo - invariant values");
