@@ -2,7 +2,7 @@ package com.company;
 
 public class Main {
     public static class InputInfo {
-        public InputInfo(String firstStrVal, String secondStrVal) {
+        InputInfo(String firstStrVal, String secondStrVal) {
             if (firstStrVal == null || secondStrVal == null || firstStrVal.isEmpty() || secondStrVal.isEmpty())
                 throw new NullPointerException();
 
@@ -24,7 +24,10 @@ public class Main {
     }
 
     public static class PrintInfo {
-        public PrintInfo(SimpleOperationInteger object) {
+        PrintInfo(SimpleOperationInteger object) {
+            if (object == null)
+                return;
+
             if (object.isEquals())
                 System.out.println("Values is equals");
             else {
@@ -39,7 +42,7 @@ public class Main {
     }
 
     public static class SimpleOperationInteger {
-        public SimpleOperationInteger(Integer firstValue, Integer secondValue) {
+        SimpleOperationInteger(Integer firstValue, Integer secondValue) {
             try {
                 if (firstValue == null || secondValue == null)
                     throw new NullPointerException();
@@ -52,23 +55,23 @@ public class Main {
             _secondValue = secondValue;
         }
 
-        public boolean firstIsBigger() {
+        boolean firstIsBigger() {
             return (_firstValue > _secondValue);
         }
 
-        public Integer sum() {
+        Integer sum() {
             return _firstValue + _secondValue;
         }
 
-        public Integer getFirstValue() {
+        Integer getFirstValue() {
             return _firstValue;
         }
 
-        public Integer getSecondValue() {
+        Integer getSecondValue() {
             return _secondValue;
         }
 
-        public boolean isEquals() {
+        boolean isEquals() {
             return _firstValue.equals(_secondValue);
         }
 
