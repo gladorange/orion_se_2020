@@ -7,14 +7,14 @@ public class Main {
         Integer int1 = Integer.valueOf(args[0]);
         Integer int2 = Integer.valueOf(args[1]);
 
-        if( int1 > int2 )
-        {
-            System.out.printf( "Число %s больше числа %s\n", int1.toString(), int2.toString());
+        if (int1 > int2) {
+            System.out.printf("Число %s больше числа %s\n", int1.toString(), int2.toString());
         }
-        else
-        {
-            System.out.printf( "Число %s меньше числа %s\n", int1.toString(), int2.toString() );
+        else if (int1 < int2) {
+            System.out.printf("Число %s меньше числа %s\n", int1.toString(), int2.toString());
         }
-
+        else {
+            System.out.printf("Число %s равно числу %s\n", int1.toString(), int2.toString());
+        }
     }
 }
