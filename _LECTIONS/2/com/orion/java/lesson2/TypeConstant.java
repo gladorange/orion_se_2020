@@ -2,32 +2,24 @@ package com.orion.java.lesson2;
 
 public class TypeConstant {
 
-
     public static void main(String[] args) {
-        boolean tr = true;
-        boolean fl = false;
 
+        int[] nums = {1,-1,3,-1,5,-1,2,-3,3};
 
-        Boolean b = null;
-
-        if (b != null && b) {
-            System.out.println("true");
+        for (int i = 0; i < 10; i++) {
+            for (int j = 1; j < nums.length; j++) {
+                compareNumbers(nums[i], nums[j]);
+                i++;
+            }
         }
 
+    }
 
-
-        Long L = 42L;
-        Double d = 1.;
-        Double d2 = .5;
-
-        Float f = .0f;
-        Float f2 = 2.f;
-
-
-        long lPrim = 42_000_000_00000000L;
-        int prim = (int)lPrim;
-        System.out.println(prim);
-
+    static void compareNumbers(int number, int numberTwo) {
+        if ((number > 0) && (numberTwo < 0))
+            System.out.println("Числа с противоположными знаками обнаружены: " + number + " " + numberTwo);
+        else if ((number < 0) && (numberTwo > 0))
+            System.out.println("Числа с противоположными знаками обнаружены: " + number + " " + numberTwo);
 
     }
 }
