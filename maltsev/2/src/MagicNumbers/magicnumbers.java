@@ -12,7 +12,7 @@ public class magicnumbers {
 
             // делаем массив случайных чисел в ренже -100 до 100
             for (int j = 0; j < arr.length; j++) {
-                arr[j] = getRandomInRange(-100,100);
+                arr[j] = (int)getRandomInRange(-100,100);
         }
 
             // проверяю цифры на магичество
@@ -24,7 +24,7 @@ public class magicnumbers {
         }
     }
 
-    static int getRandomInRange(int a1, int a2) {
+    static long getRandomInRange(int a1, int a2) {
         Random r = new Random();
         return r.nextInt((Math.max(a1, a2) - Math.min(a1, a2)) + 1) + Math.min(a1, a2);
     }
