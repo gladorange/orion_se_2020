@@ -14,9 +14,7 @@ public class Main {
 
             //Так как магазины заполняютсья случайны образом опускаем момент с лучаным выборкой товара, в нашем кейсе,
             //даже нулевой товар будет случайным
-
             String itemForBuy = shops[i].getItems()[0];
-            int idealTimeForBuy = 0;
 
             for (int i1 = 0; i1 < 24; i1++) {
                 int itemPrice = shops[i].checkItemPrice(itemForBuy, i1);
