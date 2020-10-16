@@ -17,7 +17,6 @@ public class FixPriceShop {
             newItems[newItems.length-1] = item;
             items = newItems;
         }
-  //      System.out.println("Товар добавлен");
     }
 
     // Добавить товар списочно
@@ -29,7 +28,6 @@ public class FixPriceShop {
                 addCount++;
             }
         }
-    //    System.out.printf("Добавлено %d товаров\n", addCount);
     }
 
     // Удалить товар по индексу (индексы начинаются с 0)
@@ -81,9 +79,11 @@ public class FixPriceShop {
         }
     }
 
-    private void setHappyHour( int happyHour ) {
-        if (happyHour>=0 & happyHour <= 23) {
+    private void setHappyHour( int happyHour ) throws IllegalArgumentException {
+        if (happyHour>=0 && happyHour <= 23) {
             this.happyHour = happyHour;
+        }else{
+            throw new IllegalArgumentException("Счастливый час должен быть в диапозоне от 0 до 23");
         }
     }
 
