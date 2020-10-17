@@ -75,8 +75,6 @@ public class Lesson3 {
             }
             System.out.println();
         }
-        System.out.println();
-        System.out.println();
     }
 }
 
