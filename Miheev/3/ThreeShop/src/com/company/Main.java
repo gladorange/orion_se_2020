@@ -54,7 +54,7 @@ public class Main {
 }
 
 class FixPriceShop {
-    // static fields
+    // static fields 
     static int price = 49;
     static int happyHour = 14;
 
