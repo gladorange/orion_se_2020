@@ -1,17 +1,18 @@
-package MagicOfNumbers;
+package magicofnumbers;
 
 import java.util.Random;
-import java.util.stream.IntStream;
 
 public class MagicOfNumbers {
-    public static void main (String[] args) {
-        int [] arrayOfIntegers = new int[100];
+    private final static int ARRAY_SIZE = 100;
 
-        for (int i = 0; i < 100; i++) {
+    public void generateMagic () {
+        int [] arrayOfIntegers = new int[ARRAY_SIZE];
+
+        for (int i = 0; i < arrayOfIntegers.length; i++) {
             Random random = new Random();
-            int generatedInteger = random.nextInt(101)  - (random.nextInt(2) == 0 ? 0 : 100);
+            int generatedInteger = random.nextInt(ARRAY_SIZE * 2 + 1) - ARRAY_SIZE;
+
             arrayOfIntegers[i] = generatedInteger;
-            // System.out.println("Число: " + generatedInteger);
             if(isMagicNumber(generatedInteger)) {
                 System.out.printf("Число %d - магическое!\n", arrayOfIntegers[i]);
             }
@@ -21,10 +22,9 @@ public class MagicOfNumbers {
     public static boolean isMagicNumber(int number) {
         int whole = number / 10;
         int fractional = number % 10;
-        // System.out.println("whole: " + whole + " fractional: " + fractional);
 
         if (whole == fractional) {
-            if (Math.abs(whole) > 0 && Math.abs(whole) < 100) {
+            if (Math.abs(whole) > 0 && Math.abs(whole) < ARRAY_SIZE) {
                 return true;
             }
         }
