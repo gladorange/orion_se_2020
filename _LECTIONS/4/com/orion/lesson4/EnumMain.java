@@ -30,5 +30,10 @@ public class EnumMain {
 
         System.out.println(vasya);
         System.out.println(masha);
+
+
+        System.out.println("Привет," + vasya.gender.getGreeting() + " " + vasya.name);
+        System.out.println("Привет," + masha.gender.getGreeting() + " " + masha.name);
+
     }
 }
