@@ -13,7 +13,7 @@ public class GasStation {
     }
 
     static void findBestPrice(List<Triple<String, GasolineType, Double>> gasStations, GasolineType type) {
-        Pair<String, Double> bestPrice = new Pair<String, Double>("", (double)-1);
+        Pair<String, Double> bestPrice = new Pair<>("", (double)-1);
         for (Triple<String, GasolineType, Double> gasStation : gasStations) {
             if (gasStation.getSecond() == type) {
                 double currentPrice = gasStation.getThird();
@@ -21,7 +21,7 @@ public class GasStation {
                     bestPrice.setFirst((String)gasStation.getFirst());
                     bestPrice.setSecond(currentPrice);
                 } else {
-                    if (bestPrice.getSecond() < currentPrice) {
+                    if (bestPrice.getSecond() > currentPrice) {
                         bestPrice.setFirst((String)gasStation.getFirst());
                         bestPrice.setSecond(currentPrice);
                     }

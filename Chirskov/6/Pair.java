@@ -3,6 +3,7 @@ import java.util.Objects;
 public class Pair<T, E> {
     private T first;
     private E second;
+
     Pair(T first, E second) {
         this.first = first;
         this.second = second;
@@ -37,11 +38,13 @@ public class Pair<T, E> {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        Pair<?,?> pair = (Pair<?,?>) o;
-        if (first != pair.first)
+        Pair<?, ?> pair = (Pair<?, ?>) o;
+        if (first != pair.first) {
             return false;
-        if (second != pair.second)
+        }
+        if (second != pair.second) {
             return false;
+        }
         return true;
     }
 

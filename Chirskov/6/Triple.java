@@ -34,8 +34,9 @@ public class Triple<E, K, T> extends Pair {
             return false;
         }
         Triple<?, ?, ?> triple = (Triple<?, ?, ?>) o;
-        if (third != triple.third)
+        if (third != triple.third) {
             return false;
+        }
 
         return super.equals(o);
     }
