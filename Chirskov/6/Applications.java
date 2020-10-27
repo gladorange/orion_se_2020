@@ -1,20 +1,6 @@
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class Applications {
-    static class SortByRating implements Comparator<Triple<String, Integer, Double>> {
-        public int compare(Triple<String, Integer, Double> T, Triple<String, Integer, Double> V) {
-            if ((Integer)T.getSecond() > (Integer)V.getSecond()) {
-                return -1;
-            } else if (T.getSecond() == V.getSecond()) {
-                return 0;
-            } else {
-                return 1;
-            }
-        }
-    }
-
     public static void main(String[] args) {
         List<Triple<String, Integer, Double>> applicationsList = new ArrayList<>();
         applicationsList.add(new Triple<>("Maps", 39, 4.5));
@@ -32,10 +18,8 @@ public class Applications {
     }
 
     static void printSortedByRating(List<Triple<String, Integer, Double>> applicationsList) {
-        applicationsList.sort(new SortByRating());
-        for (Triple<String, Integer, Double> app : applicationsList) {
-            System.out.println(app);
-        }
+        Collections.sort(applicationsList, (T, V) -> (Integer)V.getSecond() - (Integer)T.getSecond());
+        System.out.println(applicationsList);
     }
 
     static void printBestApps(List<Triple<String, Integer, Double>> applicationsList) {
