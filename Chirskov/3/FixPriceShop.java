@@ -5,13 +5,11 @@ public class FixPriceShop {
     static final int FIXED_PRICE = ThreadLocalRandom.current().nextInt(1, Integer.MAX_VALUE);
     static final int MAX_PRODUCT_COUNT = 100;
     static final int MAX_HAPPY_HOUR = 23;
-    private HashMap<String, Integer> items;
+    private HashMap<String, Integer> items = new HashMap<>();
     private int happyHour;
-    private ArrayList<String> availableItems;
+    private ArrayList<String> availableItems = new ArrayList<>();
     FixPriceShop(String[] items)
     {
-        this.items = new HashMap<>();
-        availableItems = new ArrayList<>();
         for (String item : items)
         {
             int count = ThreadLocalRandom.current().nextInt(0, MAX_PRODUCT_COUNT);
