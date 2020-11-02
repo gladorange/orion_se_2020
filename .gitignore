@@ -19,10 +19,9 @@
 *.tar.gz
 *.rar
 
-.idea
+.idea/
 
 # My files #
-1/.idea/
 *.iml
 1/src/
 .gitignore
