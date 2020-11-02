@@ -1,11 +1,11 @@
 import java.util.concurrent.ThreadLocalRandom;
 
 public abstract class Fruit {
+    protected int weight;
+    static final int MAX_WEIGHT = 999;
     Fruit() {
         setWeight(ThreadLocalRandom.current().nextInt(1, MAX_WEIGHT));
     }
-    protected int weight;
-    static final int MAX_WEIGHT = 999;
     public void setWeight(int weight) {
         this.weight = weight;
     }
