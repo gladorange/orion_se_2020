@@ -13,8 +13,8 @@ public class Main {
         final String[] berries = {"barberry", "blueberry ", "cherry", "currant", "raspberry", "rowan"};
 
         FixPriceShop fruitShop = new FixPriceShop(fruits, 10);
-        FixPriceShop vegetableShop = new FixPriceShop(vegetables, 20);
-        FixPriceShop berryShop = new FixPriceShop(berries, 30);
+        FixPriceShop vegetableShop = new FixPriceShop(vegetables, 11);
+        FixPriceShop berryShop = new FixPriceShop(berries, 14);
 
         System.out.print("Товары из фруктового магазина: " );
         for (int i = 0;i < fruitShop.getItems().length;i++){
@@ -86,11 +86,11 @@ public class Main {
         fruitShop.buyItem(fruit, 10);
         System.out.println();
 
-        vegetableShop.buyItem(vegetable, 10);
-        vegetableShop.buyItem(vegetable, 10);
+        vegetableShop.buyItem(vegetable, 11);
+        vegetableShop.buyItem(vegetable, 11);
         System.out.println();
 
-        berryShop.buyItem(berry, 10);
-        berryShop.buyItem(berry, 10);
+        berryShop.buyItem(berry, 13);
+        berryShop.buyItem(berry, 13);
     }
 }

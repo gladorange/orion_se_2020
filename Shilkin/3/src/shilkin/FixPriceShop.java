@@ -4,11 +4,11 @@ public class FixPriceShop {
 
     public static final int price = 49;
     private String[] items;
-    private final int discount;
+    private final int happyHour;
 
-    FixPriceShop(String[] items, int discount){
+    FixPriceShop(String[] items, int happyHour){
         this.items = items;
-        this.discount = discount;
+        this.happyHour = happyHour;
     }
 
     public int checkItemPrice(String item, int hour){
@@ -32,7 +32,10 @@ public class FixPriceShop {
                 break;
             }
         }
-        if (isExist){
+        if (!isExist){
+            System.out.println("Товар "+ item + " не найден :(");
+        }
+        else {
             for (int i = 0, k = 0; i < this.items.length; i++) {
                 if (i == index) {
                     continue;
@@ -42,15 +45,11 @@ public class FixPriceShop {
             this.items = temporaryArray;
             System.out.println("Товар "+ item + " продан по цене: " + getDiscountPrice(hour));
         }
-        else {
-            System.out.println("Товар "+ item + " не найден :(");
-        }
     }
 
     private int getDiscountPrice(int hour){
-        int happyHour = 10;
         if (happyHour == hour) {
-            return (int) ((float) price - (float) price / 100 * this.discount);
+            return  price / 2;
         }
         return price;
     }
