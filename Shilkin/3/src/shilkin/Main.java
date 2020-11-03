@@ -1,6 +1,5 @@
 package shilkin;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
@@ -9,9 +8,9 @@ public class Main {
 
         final int lastHour = 23;
 
-        String[] fruits = {"apple", "apricot", "avocado", "pineapple", "banana", "bergamot"};
-        String[] vegetables = {"beet", "broccoli", "cabbage", "carrot", "garlic", "onion"};
-        String[] berries = {"barberry", "blueberry ", "cherry", "currant", "raspberry", "rowan"};
+        final String[] fruits = {"apple", "apricot", "avocado", "pineapple", "banana", "bergamot"};
+        final String[] vegetables = {"beet", "broccoli", "cabbage", "carrot", "garlic", "onion"};
+        final String[] berries = {"barberry", "blueberry ", "cherry", "currant", "raspberry", "rowan"};
 
         FixPriceShop fruitShop = new FixPriceShop(fruits, 10);
         FixPriceShop vegetableShop = new FixPriceShop(vegetables, 20);
@@ -93,6 +92,5 @@ public class Main {
 
         berryShop.buyItem(berry, 10);
         berryShop.buyItem(berry, 10);
-        System.out.println();
     }
 }
