@@ -18,7 +18,7 @@ public class Main {
             firstArray[i] = random.nextInt(diff + 1) + min;
         }
 
-        for (int i = 0; i < 100; i++){
+        for (int i = 0; i < firstArray.length; i++){
             if (NumberUtils.isMagicNumber(firstArray[i])){
                 System.out.println("Число " + firstArray[i] + " - магическое!");
             }
@@ -26,14 +26,14 @@ public class Main {
 
         System.out.println();
 
-        for (int i = 0; i < 10; i++){
+        for (int i = 0; i < secondArray.length; i++){
             Random random = new Random();
             System.out.println(secondArray[i] = random.nextInt());
         }
 
         System.out.println();
 
-        for (int i = 0; i < 9; i++){
+        for (int i = 0; i < secondArray.length-1; i++){
             if (NumberUtils.isOppositeNumbers(secondArray[i], secondArray[i+1])){
                 System.out.println("Числа с противоположными знаками обнаружены: " + secondArray[i] + " " + secondArray[i+1]);
             }
