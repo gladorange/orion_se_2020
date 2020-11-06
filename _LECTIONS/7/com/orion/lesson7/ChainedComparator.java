@@ -57,8 +57,8 @@ public class ChainedComparator {
 
 
         final Comparator<PersonComparable> chainedComparator =
-                Comparator.comparing(PersonComparable::getLastName)
-                .thenComparing(PersonComparable::getName);
+                Comparator.comparing((PersonComparable personComparable) -> personComparable.getLastName())
+                .thenComparing(personComparable1 -> personComparable1.getName());
 
         Collections.sort(persons, chainedComparator);
         System.out.println(persons);
