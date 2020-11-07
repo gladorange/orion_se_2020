@@ -4,7 +4,11 @@ public class TextField extends Rectangle {
 
     private String inputText;
 
-    public void setInputText(String inputText) {
+    public void setInputText(String inputText) throws ReadOnlyException {
+        if (!super.isEnabled){
+            throw new ReadOnlyException("Элемент выключен");
+
+        }
         this.inputText = inputText;
     }
 
