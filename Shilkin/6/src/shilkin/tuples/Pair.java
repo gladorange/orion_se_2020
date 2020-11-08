@@ -1,0 +1,35 @@
+package shilkin.tuples;
+
+public class Pair <T,U>{
+
+    private final T first;
+    private final U second;
+
+    public Pair(T first, U second) {
+        this.first = first;
+        this.second = second;
+    }
+
+    public T getFirst() {
+        return first;
+    }
+
+    public U getSecond() {
+        return second;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Pair<?,?> pair = (Pair<?,?>) o;
+        return this.first == pair.first && this.second == pair.second;
+    }
+
+    @Override
+    public int hashCode() {
+        int firstHash = this.first.hashCode();
+        int secondHash = this.second.hashCode();
+        return firstHash + secondHash;
+    }
+}
