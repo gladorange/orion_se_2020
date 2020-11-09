@@ -18,7 +18,7 @@ public class Rectangle implements Clickable {
     }
 
     @Override
-    public void click() {
+    public void click() throws ReadOnlyException {
 
     }
 }
