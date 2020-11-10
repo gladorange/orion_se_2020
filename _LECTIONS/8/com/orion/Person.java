@@ -38,7 +38,7 @@ public class Person {
     }
 
 
-    static public <T extends Person & Comparable> T getMaxPerson(T one, T another) {
+    static public <T extends Person & Comparable<T>> T getMaxPerson(T one, T another) {
         return one.compareTo(another) > 0 ? one : another;
     }
 

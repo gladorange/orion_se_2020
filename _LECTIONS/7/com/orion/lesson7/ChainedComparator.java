@@ -1,22 +1,29 @@
 package com.orion.lesson7;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.function.Function;
 
 public class ChainedComparator {
 
 
-    static class Person {
+    static class PersonComparable {
         String name;
         String lastName;
+        String age;
 
-        public Person(String name, String lastName) {
+        public PersonComparable(String name, String lastName) {
             this.name = name;
             this.lastName = lastName;
+        }
+
+        public String getAge() {
+            return age;
+        }
+
+        public void setAge(String age) {
+            this.age = age;
         }
 
         public String getName() {
@@ -38,18 +45,20 @@ public class ChainedComparator {
 
 
     public static void main(String[] args) {
-        List<Person> persons = new ArrayList<>();
-        persons.add(new Person("Иван", "Иванов"));
-        persons.add(new Person("Андрей", "Иванов"));
-        persons.add(new Person("Яков", "Иванов"));
-        persons.add(new Person("Михал", "Иванов"));
-        persons.add(new Person("Михаил", "Абрикосов"));
+        List<PersonComparable> persons = new ArrayList<>();
+        persons.add(new PersonComparable("Иван", "Иванов"));
+        persons.add(new PersonComparable("Андрей", "Иванов"));
+        persons.add(new PersonComparable("Яков", "Иванов"));
+        persons.add(new PersonComparable("Михал", "Иванов"));
+        persons.add(new PersonComparable("Михаил", "Абрикосов"));
 
 
-        final Comparator<Person> firstNameComparator = Comparator.comparing(person -> person.getName());
-        final Comparator<Person> lastNameComparator = Comparator.comparing(person -> person.getLastName());
+        final PersonComparable max = Collections.max(persons, Comparator.comparing(person -> person.getAge()));
 
-        final Comparator<Person> chainedComparator = lastNameComparator.thenComparing(firstNameComparator);
+
+        final Comparator<PersonComparable> chainedComparator =
+                Comparator.comparing((PersonComparable personComparable) -> personComparable.getLastName())
+                .thenComparing(personComparable1 -> personComparable1.getName());
 
         Collections.sort(persons, chainedComparator);
         System.out.println(persons);
