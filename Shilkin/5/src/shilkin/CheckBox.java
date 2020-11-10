@@ -14,7 +14,11 @@ public class CheckBox extends Rectangle implements Clickable {
     }
 
     @Override
-    public void click() {
+    public void click() throws ReadOnlyException {
+
+        if (!super.isEnabled){
+            throw new ReadOnlyException("Элемент выключен");
+        }
         this.isPressed = !this.isPressed;
     }
 

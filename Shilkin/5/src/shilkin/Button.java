@@ -1,7 +1,7 @@
 package shilkin;
 
 public class Button extends Rectangle implements Clickable {
-    final ButtonClickCallback callback;
+    private final ButtonClickCallback callback;
 
     public Button(int x, int y, int height, int width, String caption, boolean isEnabled, ButtonClickCallback callback) {
         super(x, y, height, width, caption, isEnabled);
@@ -9,7 +9,10 @@ public class Button extends Rectangle implements Clickable {
     }
 
     @Override
-    public void click() {
+    public void click() throws ReadOnlyException {
+        if (!super.isEnabled){
+            throw new ReadOnlyException("Элемент выключен");
+        }
         callback.onButtonClick(this);
     }
 

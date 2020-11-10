@@ -1,50 +1,50 @@
 package shilkin;
 
 public class UI {
+
     private Rectangle[] elements;
 
     public Rectangle[] getAllElements() {
         return this.elements;
     }
 
-    public void addElement(Rectangle rectangle) throws ElementsOverlapException {
-        int count;
+    public void addElement(Rectangle rectangle) throws ElementsOverlapException, OutOfSceneException {
         if (this.elements == null) {
-            count = 0;
-        } else {
-            count = this.elements.length;
-        }
-        if (count != 0) {
-            if (isIntersects(rectangle).equals("")) {
-                Rectangle[] temporaryArray = new Rectangle[count + 1];
-                for (int i = 0; i < count; i++) {
-                    temporaryArray[i] = this.elements[i];
-                }
-                temporaryArray[count] = rectangle;
-                this.elements = temporaryArray;
-            } else {
-                throw new ElementsOverlapException("Элемент " + rectangle.caption + " не может быть добавлен, т.к. пересекается с элементом " + isIntersects(rectangle));
-            }
-        } else{
-            Rectangle[] temporaryArray = new Rectangle[count + 1];
-            for (int i = 0; i < count; i++) {
-                temporaryArray[i] = this.elements[i];
-            }
-            temporaryArray[count] = rectangle;
+            Rectangle[] temporaryArray = new Rectangle[1];
+            temporaryArray[0] = rectangle;
             this.elements = temporaryArray;
+            return;
         }
 
+        if (getOutScene(rectangle)) {
+            throw new OutOfSceneException("Элемент " + rectangle.caption + " не может быть добавлен, т.к. выходит за границы сцены");
+        }
+        if (getIntersection(rectangle).isIntersect()) {
+            throw new ElementsOverlapException("Элемент " + rectangle.caption + " не может быть добавлен, т.к. пересекается с элементом " + getIntersection(rectangle).getElement());
+        }
+
+        Rectangle[] temporaryArray = new Rectangle[this.elements.length + 1];
+        System.arraycopy(this.elements, 0, temporaryArray, 0, this.elements.length);
+        temporaryArray[this.elements.length] = rectangle;
+        this.elements = temporaryArray;
     }
 
-    private String isIntersects(Rectangle rectangle) {
-        String captionInterElement = "";
-        for (int i = 0; i < this.elements.length; i++) {
-            if ((rectangle.x < this.elements[i].x + this.elements[i].width) && (rectangle.x + rectangle.width > this.elements[i].x)
-                    && (rectangle.y < this.elements[i].y + this.elements[i].height) && (rectangle.y + rectangle.height > this.elements[i].y)) {
-                captionInterElement = this.elements[i].caption;
+    private InterCheckResult getIntersection(Rectangle rectangle) {
+        InterCheckResult checkResult = new InterCheckResult();
+        for (Rectangle element : this.elements) {
+            if ((rectangle.x < element.x + element.width) && (rectangle.x + rectangle.width > element.x)
+                    && (rectangle.y < element.y + element.height) && (rectangle.y + rectangle.height > element.y)) {
+                checkResult.setElement(element.caption);
+                checkResult.setIntersect(true);
                 break;
             }
         }
-        return captionInterElement;
+        return checkResult;
+    }
+
+    boolean getOutScene(Rectangle rectangle){
+        int maxX = 100;
+        int maxY = 100;
+        return (rectangle.x + rectangle.width > maxX) || (rectangle.x + rectangle.height > maxY);
     }
 }

@@ -1,5 +1,5 @@
 package shilkin;
 
 public interface Clickable {
-    void click();
+    void click() throws ReadOnlyException;
 }
