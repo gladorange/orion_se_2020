@@ -8,6 +8,7 @@ import java.util.Map;
 
 public class MethodReferences2 {
 
+
     public static void main(String[] args) {
         String text = "A B C D C B D C B D A C B C S";
 
@@ -21,44 +22,8 @@ public class MethodReferences2 {
         System.out.println(characterToCount);
 
 
-        List<Triple> personsAndNames = new ArrayList<>();
-
-
-        personsAndNames.add(new Triple(new Person(), "Вася", 18));
-        personsAndNames.add(new Triple(new Person(), "Петя", 23));
-        personsAndNames.add(new Triple(new Person(), "Маша", 27));
-
-
-       // personsAndNames.forEach();
-
-
-
-
     }
 
-
-
-    static class Triple {
-        final Person person;
-        final String nameToSet;
-        final Integer ageToSet;
-
-        Triple(Person person, String nameToSet, Integer ageToSet) {
-            this.person = person;
-            this.nameToSet = nameToSet;
-            this.ageToSet = ageToSet;
-        }
-    }
-
-
-    interface ElementListHandler {
-        void handleTriple(Triple triple);
-    }
-
-
-    interface TripleHandler {
-        void handle(Person person, String name, Integer age);
-    }
 
     static class  Person {
         String name;
@@ -69,6 +34,13 @@ public class MethodReferences2 {
             this.age = age;
         }
 
+        @Override
+        public String toString() {
+            return "Person{" +
+                    "name='" + name + '\'' +
+                    ", age=" + age +
+                    '}';
+        }
     }
 
 }
