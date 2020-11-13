@@ -30,7 +30,20 @@ public class MethodRefernecesTriple {
         void handle(Person person, String name, Integer age);
     }
 
+    static class  Person {
+        String name;
+        Integer age;
+
+        void setNameAndAge(String name, Integer age) {
+            this.name = name;
+            this.age = age;
+        }
+        public String toString() {
+            return "Person{" + "name='" + name + '\'' + ", age=" + age + '}';
+        }
+    }
     static class TripleList extends ArrayList<Triple> {
+
         public void forEachTriple(TripleHandler handler) {
             forEach(element -> handler.handle(element.person, element.nameToSet, element.ageToSet));
         }
@@ -39,7 +52,6 @@ public class MethodRefernecesTriple {
     public static void main(String[] args) {
 
         TripleList personsAndNames = new TripleList();
-
 
         personsAndNames.add(new Triple(new Person(), "Вася", 18));
         personsAndNames.add(new Triple(new Person(), "Петя", 23));
