@@ -20,7 +20,6 @@ public class Scene {
                 case 1 -> characters.add(new Mage(mageName, randomInts.get(i)));
             }
         }
-        System.out.println(characters.toString());
     }
 
     public void startGame() {
