@@ -4,18 +4,21 @@ import shilkin.annotations.XmlIgnore;
 import shilkin.annotations.XmlName;
 import shilkin.annotations.XmlType;
 
-@XmlType("Стажер")
+@XmlType("Trainee")
 public class Trainee {
-    @XmlName("Имя")
-    private final String name;
-    @XmlName("Фамилия")
-    private final String surname;
-    @XmlName("Возраст")
-    private final int age;
-    @XmlName("Проект")
-    private final String project;
+    @XmlName("name")
+    private  String name;
+    @XmlName("surname")
+    private  String surname;
+    @XmlName("age")
+    private  int age;
+    @XmlName("project")
+    private  String project;
     @XmlIgnore
-    private final String password;
+    private  String password;
+
+    public Trainee() {
+    }
 
     public Trainee(String name, String surname, int age, String password, String project) {
         this.name = name;
