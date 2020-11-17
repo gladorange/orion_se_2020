@@ -29,7 +29,7 @@ public class NumbersAndDigits {
         }).start();
 
         new Thread(() -> {
-            final byte[] toWrite1 = {49, 49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49};
+            final byte[] toWrite1 = {49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49};
             try {
                 writeToFile(toWrite1);
             } catch (IOException e) {
@@ -43,7 +43,9 @@ public class NumbersAndDigits {
 
     }
 
-    private static void writeToFile(byte[] toWrite) throws IOException {
+    private static final Object monitor = new Object();
+
+    private synchronized static void writeToFile(byte[] toWrite) throws IOException {
         for (byte b : toWrite) {
             fos.write(b);
         }
