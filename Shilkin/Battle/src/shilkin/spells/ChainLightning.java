@@ -21,12 +21,11 @@ public class ChainLightning extends Spell {
             String targetName = characters.get(randomPosition).getName();
             int targetHealthBeforeAttack = characters.get(randomPosition).getHealth();
             int targetHealthAfterAttack = targetHealthBeforeAttack - super.damage;
+            System.out.println("Заклинание " + super.name + " задевает " + targetName + " и наносит " + super.damage + " урона.");
             if (targetHealthAfterAttack <= 0) {
-                System.out.println("Заклинание " + super.name + " задевает " + targetName + " и наносит " + super.damage + " урона.");
                 System.out.println(targetName + " погибает.");
                 characters.get(position).addKilledCharacters(characters.get(randomPosition));
             } else {
-                System.out.println("Заклинание " + super.name + " задевает " + targetName + " и наносит " + super.damage + " урона.");
                 characters.get(randomPosition).setHealth(targetHealthAfterAttack);
             }
         }

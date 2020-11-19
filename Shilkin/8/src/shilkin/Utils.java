@@ -6,10 +6,11 @@ import shilkin.annotations.XmlType;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-public class Serializer {
-
+public class Utils {
     public String toSerializeObject(Object object) throws IllegalAccessException {
         StringBuilder output = new StringBuilder();
         final Class<?> myClass = object.getClass();
@@ -45,7 +46,7 @@ public class Serializer {
         return declaredField.getName();
     }
 
-    Object toDeserializeObject(String xmlObject, Class<?> myClass) throws IllegalAccessException, InstantiationException {
+    public <T> T toDeserializeObject(String xmlObject, Class<T> myClass) throws IllegalAccessException, InstantiationException {
         xmlObject = xmlObject.replaceAll("[\n]", "");
         List<String> names = new ArrayList<>();
         StringBuilder builder = new StringBuilder(xmlObject);
@@ -84,22 +85,23 @@ public class Serializer {
                 endIndex = 0;
             }
         }
-        Object object = myClass.newInstance();
+        Map<String, String> xmlLines = new HashMap<>();
+        for (int i = 0; i < xmlFields.size(); i++) {
+            xmlLines.put(names.get(i), xmlFields.get(i));
+        }
+        T object = myClass.newInstance();
         for (int i = 0; i < myClass.getDeclaredFields().length; i++) {
             Field field = myClass.getDeclaredFields()[i];
             field.setAccessible(true);
             if (field.isAnnotationPresent(XmlIgnore.class)) {
                 continue;
             }
-            if (field.getAnnotation(XmlName.class).value().equals(names.get(i))) {
-                if (field.getType() == String.class) {
-                    field.set(object, xmlFields.get(i));
-                } else {
-                    field.set(object, Integer.parseInt(xmlFields.get(i)));
-                }
+            if (field.getType() == String.class) {
+                field.set(object, xmlLines.get(field.getAnnotation(XmlName.class).value()));
+            } else {
+                field.set(object, Integer.parseInt(xmlLines.get(field.getAnnotation(XmlName.class).value())));
             }
         }
         return object;
     }
 }
-
