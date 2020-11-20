@@ -1,13 +1,12 @@
-package shilkin;
+package shilkin.third;
 
-import java.time.LocalDate;
 import java.util.Set;
 
 public class Student {
     private final String name;
-    private final Set<Lection> courses;
+    private final Set<Lecture> courses;
 
-    public Student(String name,  Set<Lection> courses) {
+    public Student(String name, Set<Lecture> courses) {
         this.name = name;
         this.courses = courses;
     }
@@ -16,7 +15,7 @@ public class Student {
         return name;
     }
 
-    public Set<Lection> getCourses() {
+    public Set<Lecture> getCourses() {
         return courses;
     }
 

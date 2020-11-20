@@ -1,4 +1,4 @@
-package shilkin;
+package shilkin.second;
 
 @FunctionalInterface
 public interface Operation {

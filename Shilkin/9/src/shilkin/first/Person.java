@@ -1,4 +1,4 @@
-package shilkin;
+package shilkin.first;
 
 public class Person {
 

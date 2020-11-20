@@ -1,12 +1,12 @@
-package shilkin;
+package shilkin.third;
 
 import java.time.LocalDate;
 
-public class Lection {
+public class Lecture {
     private final String name;
     private final LocalDate date;
 
-    public Lection(String name, LocalDate date) {
+    public Lecture(String name, LocalDate date) {
         this.name = name;
         this.date = date;
     }
@@ -15,9 +15,13 @@ public class Lection {
         return name;
     }
 
+    public LocalDate getDate() {
+        return date;
+    }
+
     @Override
     public String toString() {
-        return "Lection{" +
+        return "Lecture{" +
                 "name='" + name + '\'' +
                 ", date=" + date +
                 '}';
