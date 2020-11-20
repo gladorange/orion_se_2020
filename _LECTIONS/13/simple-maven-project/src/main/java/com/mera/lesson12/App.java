@@ -13,10 +13,6 @@ public class App
         System.out.println( "Hello World!" );
     }
 
-
-   /* public static BigInteger sum(int one, int another) {
-        return BigInteger.valueOf(one).add(BigInteger.valueOf(another));
-    }*/
     public static int sum(int one, int another) {
         return one + another;
     }

@@ -31,7 +31,7 @@
   </dependencies>
 
   <scm>
-    <url>git://github.com/gladorange/niit_se_2020</url>
+    <url>git://github.com/gladorange/orion_se_2020</url>
   </scm>
 
 
@@ -55,7 +55,7 @@
         <configuration>
           <doCheck>false</doCheck>
           <doUpdate>false</doUpdate>
-          <urlScm>scm:git:https://github.com/gladorange/niit_se_2020</urlScm>
+          <urlScm>scm:git:https://github.com/gladorange/orion_se_2020</urlScm>
         </configuration>
 
       </plugin>

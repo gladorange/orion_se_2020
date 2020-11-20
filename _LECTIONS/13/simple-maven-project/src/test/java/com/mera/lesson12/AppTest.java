@@ -1,7 +1,9 @@
 package com.mera.lesson12;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -9,23 +11,17 @@ import org.junit.Test;
  */
 public class AppTest 
 {
-    /**
-     * Rigorous Test :-)
-     */
+
     @Test
     public void testArithmetic()
     {
-        assertTrue("Арифметика не работает",App.sum(2,2) == 4);
+        assertEquals("Арифметика не работает", 4, App.sum(2, 2));
     }
-/*
+
     @Test
+    @Ignore
     public void testArithmeticOverflow()
     {
-        assertTrue("Арифметика не работает",App.sum(Integer.MAX_VALUE,42).signum() > 0);
-    }*/
-    @Test
-    public void testArithmeticOverflow()
-    {
-        assertTrue("Арифметика не работает",App.sum(Integer.MAX_VALUE,42) > 0);
+        assertTrue("Арифметика не работает",App.sum(2_147_483_646,42) > 0);
     }
 }

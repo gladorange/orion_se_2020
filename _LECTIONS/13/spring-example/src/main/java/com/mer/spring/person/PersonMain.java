@@ -25,7 +25,7 @@ public class PersonMain {
     }
 
     public static void main(String[] args) {
-        PersonRepository repository = new PersonRepository();
+      /*  PersonRepository repository = new PersonRepository();
 
         PersonService service = new PersonService(repository);
 
@@ -39,6 +39,6 @@ public class PersonMain {
 
 
         System.out.println(service.findByLastName("Pupkin"));
-        salaryService.sendSalary();
+        salaryService.sendSalary();*/
     }
 }

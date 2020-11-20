@@ -6,7 +6,6 @@ import java.util.Random;
 import javax.annotation.PostConstruct;
 
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.mer.spring.dto.Person;
@@ -15,11 +14,13 @@ import com.mer.spring.dto.Person;
 public class PersonService {
 
 
-    private PersonRepository personRepository;
+    final PersonRepository personRepository;
 
     public PersonService(PersonRepository personRepository) {
         this.personRepository = personRepository;
+        //this.personRepository = personRepository;
         System.out.println("Person сервис создался");
+
     }
 
 
