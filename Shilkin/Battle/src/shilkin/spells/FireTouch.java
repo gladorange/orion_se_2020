@@ -3,7 +3,6 @@ package shilkin.spells;
 import shilkin.characters.Character;
 
 import java.util.List;
-import java.util.Random;
 
 public class FireTouch extends Spell{
     public FireTouch() {

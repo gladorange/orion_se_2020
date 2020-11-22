@@ -1,7 +1,6 @@
 package shilkin.spells;
 
 import shilkin.characters.Character;
-import shilkin.characters.Mage;
 
 import java.util.List;
 import java.util.Random;
