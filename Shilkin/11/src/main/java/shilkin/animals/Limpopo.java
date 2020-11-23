@@ -5,14 +5,14 @@ import shilkin.annotations.AutowiredSimpleComponent;
 import shilkin.annotations.SimpleComponent;
 
 @SimpleComponent()
-public class Zoo {
+public class Limpopo {
 
     @AutowiredSimpleComponent
     private Cat cat;
     @AutowiredSimpleComponent
     private Dog dog;
 
-    public Zoo() {
+    public Limpopo() {
     }
 
     @AfterDependenciesInjected

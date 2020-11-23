@@ -10,12 +10,13 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 public class SimpleDIFramework {
     public SimpleDIFramework(String basePackagesToScan) throws NotAnnotatedWithSimpleComponentException, IllegalAccessException, InstantiationException, InvocationTargetException, NoSuchMethodException {
         Set<Class<?>> classes = new Reflections(basePackagesToScan).getTypesAnnotatedWith(SimpleComponent.class);
-        ArrayList<Object> fieldObjects = new ArrayList<>();
+        List<Object> savedObjects = new ArrayList<>();
         for (Class<?> aClass : classes) {
             Object object = aClass.getDeclaredConstructor().newInstance();
             for (Field declaredField : aClass.getDeclaredFields()) {
@@ -23,14 +24,25 @@ public class SimpleDIFramework {
                     if (!declaredField.getType().isAnnotationPresent(SimpleComponent.class)) {
                         throw new NotAnnotatedWithSimpleComponentException("Класс, не содержится в контейнере.");
                     }
-                    declaredField.setAccessible(true);
-                    Object fieldObject = declaredField.getType().getDeclaredConstructor().newInstance();
-                    if (!fieldObjects.contains(fieldObject)) {
-                        fieldObjects.add(fieldObject);
-                        declaredField.set(object, fieldObject);
+                    if (savedObjects.size() == 0) {
+                        savedObjects.add(declaredField.getType().getDeclaredConstructor().newInstance());
                     } else {
-                        int index = fieldObjects.indexOf(fieldObject);
-                        declaredField.set(object, fieldObjects.get(index));
+                        boolean flag = false;
+                        for (Object savedObject : savedObjects) {
+                            if (declaredField.getType() == savedObject.getClass()) {
+                                flag = true;
+                                break;
+                            }
+                        }
+                        if (!flag) {
+                            savedObjects.add(declaredField.getType().getDeclaredConstructor().newInstance());
+                        }
+                    }
+                    for (Object savedObject : savedObjects) {
+                        declaredField.setAccessible(true);
+                        if (savedObject.getClass() == declaredField.getType()) {
+                            declaredField.set(object, savedObject);
+                        }
                     }
                 }
             }
