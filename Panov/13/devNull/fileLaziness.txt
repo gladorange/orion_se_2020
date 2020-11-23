@@ -1,172 +1,172 @@
 /usr/lib/jvm/java-8-openjdk-amd64/bin/java ...
 
-===== НАЧАЛО САЙТА http://localhost:81/info/hw13.php?page_id=1 ======
-content #1, text = c4ca4238a0b923820dcc509a6f75849b
-===== КОНЕЦ САЙТА http://localhost:81/info/hw13.php?page_id=1 ======
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=1 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=1 ======
 
-===== НАЧАЛО САЙТА http://localhost:81/info/hw13.php?page_id=2 ======
-content #2, text = c81e728d9d4c2f636f067f89cc14862c
-===== КОНЕЦ САЙТА http://localhost:81/info/hw13.php?page_id=2 ======
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=2 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=2 ======
 
-===== НАЧАЛО САЙТА http://localhost:81/info/hw13.php?page_id=3 ======
-content #3, text = eccbc87e4b5ce2fe28308fd9f2a7baf3
-===== КОНЕЦ САЙТА http://localhost:81/info/hw13.php?page_id=3 ======
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=3 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=3 ======
 
-===== НАЧАЛО САЙТА http://localhost:81/info/hw13.php?page_id=4 ======
-content #4, text = a87ff679a2f3e71d9181a67b7542122c
-===== КОНЕЦ САЙТА http://localhost:81/info/hw13.php?page_id=4 ======
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=4 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=4 ======
 
-===== НАЧАЛО САЙТА http://localhost:81/info/hw13.php?page_id=5 ======
-content #5, text = e4da3b7fbbce2345d7772b0674a318d5
-===== КОНЕЦ САЙТА http://localhost:81/info/hw13.php?page_id=5 ======
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=5 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=5 ======
 
-===== НАЧАЛО САЙТА http://localhost:81/info/hw13.php?page_id=6 ======
-content #6, text = 1679091c5a880faf6fb5e6087eb1b2dc
-===== КОНЕЦ САЙТА http://localhost:81/info/hw13.php?page_id=6 ======
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=6 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=6 ======
 
-===== НАЧАЛО САЙТА http://localhost:81/info/hw13.php?page_id=7 ======
-content #7, text = 8f14e45fceea167a5a36dedd4bea2543
-===== КОНЕЦ САЙТА http://localhost:81/info/hw13.php?page_id=7 ======
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=7 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=7 ======
 
-===== НАЧАЛО САЙТА http://localhost:81/info/hw13.php?page_id=8 ======
-content #8, text = c9f0f895fb98ab9159f51fd0297e236d
-===== КОНЕЦ САЙТА http://localhost:81/info/hw13.php?page_id=8 ======
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=8 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=8 ======
 
-===== НАЧАЛО САЙТА http://localhost:81/info/hw13.php?page_id=9 ======
-content #9, text = 45c48cce2e2d7fbdea1afc51c7c6ad26
-===== КОНЕЦ САЙТА http://localhost:81/info/hw13.php?page_id=9 ======
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=9 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=9 ======
 
-===== НАЧАЛО САЙТА http://localhost:81/info/hw13.php?page_id=10 ======
-content #10, text = d3d9446802a44259755d38e6d163e820
-===== КОНЕЦ САЙТА http://localhost:81/info/hw13.php?page_id=10 ======
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=10 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=10 ======
 
-===== НАЧАЛО САЙТА http://localhost:81/info/hw13.php?page_id=11 ======
-content #11, text = 6512bd43d9caa6e02c990b0a82652dca
-===== КОНЕЦ САЙТА http://localhost:81/info/hw13.php?page_id=11 ======
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=11 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=11 ======
 
-===== НАЧАЛО САЙТА http://localhost:81/info/hw13.php?page_id=12 ======
-content #12, text = c20ad4d76fe97759aa27a0c99bff6710
-===== КОНЕЦ САЙТА http://localhost:81/info/hw13.php?page_id=12 ======
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=12 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=12 ======
 
-===== НАЧАЛО САЙТА http://localhost:81/info/hw13.php?page_id=13 ======
-content #13, text = c51ce410c124a10e0db5e4b97fc2af39
-===== КОНЕЦ САЙТА http://localhost:81/info/hw13.php?page_id=13 ======
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=13 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=13 ======
 
-===== НАЧАЛО САЙТА http://localhost:81/info/hw13.php?page_id=14 ======
-content #14, text = aab3238922bcc25a6f606eb525ffdc56
-===== КОНЕЦ САЙТА http://localhost:81/info/hw13.php?page_id=14 ======
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=14 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=14 ======
 
-===== НАЧАЛО САЙТА http://localhost:81/info/hw13.php?page_id=15 ======
-content #15, text = 9bf31c7ff062936a96d3c8bd1f8f2ff3
-===== КОНЕЦ САЙТА http://localhost:81/info/hw13.php?page_id=15 ======
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=15 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=15 ======
 
-===== НАЧАЛО САЙТА http://localhost:81/info/hw13.php?page_id=16 ======
-content #16, text = c74d97b01eae257e44aa9d5bade97baf
-===== КОНЕЦ САЙТА http://localhost:81/info/hw13.php?page_id=16 ======
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=16 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=16 ======
 
-===== НАЧАЛО САЙТА http://localhost:81/info/hw13.php?page_id=17 ======
-content #17, text = 70efdf2ec9b086079795c442636b55fb
-===== КОНЕЦ САЙТА http://localhost:81/info/hw13.php?page_id=17 ======
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=17 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=17 ======
 
-===== НАЧАЛО САЙТА http://localhost:81/info/hw13.php?page_id=18 ======
-content #18, text = 6f4922f45568161a8cdf4ad2299f6d23
-===== КОНЕЦ САЙТА http://localhost:81/info/hw13.php?page_id=18 ======
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=18 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=18 ======
 
-===== НАЧАЛО САЙТА http://localhost:81/info/hw13.php?page_id=19 ======
-content #19, text = 1f0e3dad99908345f7439f8ffabdffc4
-===== КОНЕЦ САЙТА http://localhost:81/info/hw13.php?page_id=19 ======
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=19 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=19 ======
 
-===== НАЧАЛО САЙТА http://localhost:81/info/hw13.php?page_id=20 ======
-content #20, text = 98f13708210194c475687be6106a3b84
-===== КОНЕЦ САЙТА http://localhost:81/info/hw13.php?page_id=20 ======
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=20 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=20 ======
 
-Time for Case1 work = 73, dataSize = 1031
+Time for Case1 work = 3189, dataSize = 2960
             ---------------------
             ---------------------
             ---------------------
             ---------------------
             ---------------------
             ---------------------
-===== НАЧАЛО САЙТА http://localhost:81/info/hw13.php?page_id=1 ======
-content #1, text = c4ca4238a0b923820dcc509a6f75849b
-===== КОНЕЦ САЙТА http://localhost:81/info/hw13.php?page_id=1 ======
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=1 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=1 ======
 
-===== НАЧАЛО САЙТА http://localhost:81/info/hw13.php?page_id=2 ======
-content #2, text = c81e728d9d4c2f636f067f89cc14862c
-===== КОНЕЦ САЙТА http://localhost:81/info/hw13.php?page_id=2 ======
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=2 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=2 ======
 
-===== НАЧАЛО САЙТА http://localhost:81/info/hw13.php?page_id=3 ======
-content #3, text = eccbc87e4b5ce2fe28308fd9f2a7baf3
-===== КОНЕЦ САЙТА http://localhost:81/info/hw13.php?page_id=3 ======
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=3 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=3 ======
 
-===== НАЧАЛО САЙТА http://localhost:81/info/hw13.php?page_id=4 ======
-content #4, text = a87ff679a2f3e71d9181a67b7542122c
-===== КОНЕЦ САЙТА http://localhost:81/info/hw13.php?page_id=4 ======
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=4 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=4 ======
 
-===== НАЧАЛО САЙТА http://localhost:81/info/hw13.php?page_id=5 ======
-content #5, text = e4da3b7fbbce2345d7772b0674a318d5
-===== КОНЕЦ САЙТА http://localhost:81/info/hw13.php?page_id=5 ======
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=5 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=5 ======
 
-===== НАЧАЛО САЙТА http://localhost:81/info/hw13.php?page_id=6 ======
-content #6, text = 1679091c5a880faf6fb5e6087eb1b2dc
-===== КОНЕЦ САЙТА http://localhost:81/info/hw13.php?page_id=6 ======
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=6 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=6 ======
 
-===== НАЧАЛО САЙТА http://localhost:81/info/hw13.php?page_id=7 ======
-content #7, text = 8f14e45fceea167a5a36dedd4bea2543
-===== КОНЕЦ САЙТА http://localhost:81/info/hw13.php?page_id=7 ======
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=7 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=7 ======
 
-===== НАЧАЛО САЙТА http://localhost:81/info/hw13.php?page_id=8 ======
-content #8, text = c9f0f895fb98ab9159f51fd0297e236d
-===== КОНЕЦ САЙТА http://localhost:81/info/hw13.php?page_id=8 ======
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=8 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=8 ======
 
-===== НАЧАЛО САЙТА http://localhost:81/info/hw13.php?page_id=9 ======
-content #9, text = 45c48cce2e2d7fbdea1afc51c7c6ad26
-===== КОНЕЦ САЙТА http://localhost:81/info/hw13.php?page_id=9 ======
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=9 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=9 ======
 
-===== НАЧАЛО САЙТА http://localhost:81/info/hw13.php?page_id=10 ======
-content #10, text = d3d9446802a44259755d38e6d163e820
-===== КОНЕЦ САЙТА http://localhost:81/info/hw13.php?page_id=10 ======
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=10 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=10 ======
 
-===== НАЧАЛО САЙТА http://localhost:81/info/hw13.php?page_id=11 ======
-content #11, text = 6512bd43d9caa6e02c990b0a82652dca
-===== КОНЕЦ САЙТА http://localhost:81/info/hw13.php?page_id=11 ======
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=11 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=11 ======
 
-===== НАЧАЛО САЙТА http://localhost:81/info/hw13.php?page_id=12 ======
-content #12, text = c20ad4d76fe97759aa27a0c99bff6710
-===== КОНЕЦ САЙТА http://localhost:81/info/hw13.php?page_id=12 ======
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=12 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=12 ======
 
-===== НАЧАЛО САЙТА http://localhost:81/info/hw13.php?page_id=13 ======
-content #13, text = c51ce410c124a10e0db5e4b97fc2af39
-===== КОНЕЦ САЙТА http://localhost:81/info/hw13.php?page_id=13 ======
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=13 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=13 ======
 
-===== НАЧАЛО САЙТА http://localhost:81/info/hw13.php?page_id=14 ======
-content #14, text = aab3238922bcc25a6f606eb525ffdc56
-===== КОНЕЦ САЙТА http://localhost:81/info/hw13.php?page_id=14 ======
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=14 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=14 ======
 
-===== НАЧАЛО САЙТА http://localhost:81/info/hw13.php?page_id=15 ======
-content #15, text = 9bf31c7ff062936a96d3c8bd1f8f2ff3
-===== КОНЕЦ САЙТА http://localhost:81/info/hw13.php?page_id=15 ======
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=15 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=15 ======
 
-===== НАЧАЛО САЙТА http://localhost:81/info/hw13.php?page_id=16 ======
-content #16, text = c74d97b01eae257e44aa9d5bade97baf
-===== КОНЕЦ САЙТА http://localhost:81/info/hw13.php?page_id=16 ======
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=16 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=16 ======
 
-===== НАЧАЛО САЙТА http://localhost:81/info/hw13.php?page_id=17 ======
-content #17, text = 70efdf2ec9b086079795c442636b55fb
-===== КОНЕЦ САЙТА http://localhost:81/info/hw13.php?page_id=17 ======
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=17 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=17 ======
 
-===== НАЧАЛО САЙТА http://localhost:81/info/hw13.php?page_id=18 ======
-content #18, text = 6f4922f45568161a8cdf4ad2299f6d23
-===== КОНЕЦ САЙТА http://localhost:81/info/hw13.php?page_id=18 ======
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=18 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=18 ======
 
-===== НАЧАЛО САЙТА http://localhost:81/info/hw13.php?page_id=19 ======
-content #19, text = 1f0e3dad99908345f7439f8ffabdffc4
-===== КОНЕЦ САЙТА http://localhost:81/info/hw13.php?page_id=19 ======
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=19 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=19 ======
 
-===== НАЧАЛО САЙТА http://localhost:81/info/hw13.php?page_id=20 ======
-content #20, text = 98f13708210194c475687be6106a3b84
-===== КОНЕЦ САЙТА http://localhost:81/info/hw13.php?page_id=20 ======
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=20 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=20 ======
 
-Time for Case2 work = 12, dataSize = 1031
+Time for Case2 work = 2948, dataSize = 2960
 
 Process finished with exit code 0

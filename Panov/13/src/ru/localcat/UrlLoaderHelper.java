@@ -8,27 +8,21 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class UrlLoaderHelper {
-    private static URL urlLoader;
 
-    public synchronized static UrlContentDTO getContentByUrl(String url) throws MalformedURLException {
-        urlLoader = new URL(url);
+    public static UrlContentDTO getContentByUrl(String url) throws MalformedURLException {
+        URL urlLoader = new URL(url);
         StringBuilder content = new StringBuilder();
-        InputStream inputStream = null;
-        try{
-            inputStream = urlLoader.openStream();
+        try ( InputStream inputStream = urlLoader.openStream()){
+
             BufferedReader in = new BufferedReader(new InputStreamReader(inputStream));
             String inputLine;
             while ((inputLine = in.readLine()) != null) {
                 content.append(inputLine);
             }
-            in.close();
 
         } catch (IOException e) {
             e.printStackTrace();
         }
-/*        finally {
-            inputStream.close();
-        }*/
 
         return new UrlContentDTO(content.toString().length(), content.toString());
     }

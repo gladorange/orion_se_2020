@@ -9,7 +9,8 @@ import java.util.concurrent.atomic.AtomicLong;
 public class Main {
 
     static AtomicLong case1DataSize;
-    static final String rootUrl = "http://localhost:81/info/hw13.php?page_id=";
+    //static final String rootUrl = "http://localhost:81/info/hw13.php?page_id=";
+    static final String rootUrl = "http://ru.wordpress.org/page.php?id=";
 
 
     public static void main(String[] args) throws MalformedURLException, ExecutionException, InterruptedException {
@@ -28,22 +29,12 @@ public class Main {
         //case 1
 
         for (String s : urlList) {
-            StringBuilder stringBuilder = new StringBuilder();
-            UrlContentDTO urlContentDTO = UrlLoaderHelper.getContentByUrl(s);
-
-            stringBuilder.append("===== НАЧАЛО САЙТА ").append(s).append(" ====== \n");
-            stringBuilder.append(urlContentDTO.getContent()).append("\n");
-            stringBuilder.append("===== КОНЕЦ САЙТА ").append(s).append(" ====== \n");
-
-            System.out.println(stringBuilder.toString());
-
+            UrlContentDTO urlContentDTO = contentWrap(s);
+            System.out.println(urlContentDTO.getContent());
             case1DataSize.updateAndGet(n -> n + urlContentDTO.getContentSize());
         }
 
         System.out.println("Time for Case1 work = " + (System.currentTimeMillis() - m1) + ", dataSize = " + case1DataSize.toString());
-
-        // Time for Case1 work = 72, dataSize = 1031, время меняетсья размер нет
-
 
         System.out.println("            ---------------------       ");
         System.out.println("            ---------------------       ");
@@ -70,21 +61,9 @@ public class Main {
         for (String s : urlList) {
             Future<UrlContentDTO> submit = executorService.submit(new Callable<UrlContentDTO>() {
                 @Override
-                public UrlContentDTO call() {
-                    UrlContentDTO urlContentDTO = null;
-                    StringBuilder stringBuilder = new StringBuilder();
-                    try {
-                        urlContentDTO = UrlLoaderHelper.getContentByUrl(s);
-                        final int size = urlContentDTO.getContentSize();
-
-
-                        stringBuilder.append("===== НАЧАЛО САЙТА ").append(s).append(" ====== \n");
-                        stringBuilder.append(urlContentDTO.getContent()).append("\n");
-                        stringBuilder.append("===== КОНЕЦ САЙТА ").append(s).append(" ====== \n");
-                    } catch (MalformedURLException e) {
-                        e.printStackTrace();
-                    }
-                    return new UrlContentDTO(urlContentDTO.getContentSize(), stringBuilder.toString());
+                public UrlContentDTO call() throws MalformedURLException {
+                    UrlContentDTO urlContentDTO2 = contentWrap(s);
+                    return new UrlContentDTO(urlContentDTO2.getContentSize(), urlContentDTO2.getContent());
                 }
             });
             result.add(submit);
@@ -107,5 +86,16 @@ public class Main {
         System.out.println("Time for Case2 work = " + (System.currentTimeMillis() - m2) + ", dataSize = " + case1DataSize.toString());
         executorService.shutdown();
 
+    }
+
+    public static UrlContentDTO contentWrap(String url) throws MalformedURLException {
+        StringBuilder stringBuilder = new StringBuilder();
+        UrlContentDTO urlContentDTO = UrlLoaderHelper.getContentByUrl(url);
+
+        stringBuilder.append("===== НАЧАЛО САЙТА ").append(url).append(" ====== \n");
+        stringBuilder.append(urlContentDTO.getContent()).append("\n");
+        stringBuilder.append("===== КОНЕЦ САЙТА ").append(url).append(" ====== \n");
+
+        return new UrlContentDTO(urlContentDTO.getContentSize(), stringBuilder.toString());
     }
 }
