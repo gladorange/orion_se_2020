@@ -1,0 +1,172 @@
+/usr/lib/jvm/java-8-openjdk-amd64/bin/java ...
+
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=1 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=1 ======
+
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=2 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=2 ======
+
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=3 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=3 ======
+
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=4 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=4 ======
+
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=5 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=5 ======
+
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=6 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=6 ======
+
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=7 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=7 ======
+
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=8 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=8 ======
+
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=9 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=9 ======
+
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=10 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=10 ======
+
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=11 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=11 ======
+
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=12 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=12 ======
+
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=13 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=13 ======
+
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=14 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=14 ======
+
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=15 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=15 ======
+
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=16 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=16 ======
+
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=17 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=17 ======
+
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=18 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=18 ======
+
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=19 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=19 ======
+
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=20 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=20 ======
+
+Time for Case1 work = 3189, dataSize = 2960
+            ---------------------
+            ---------------------
+            ---------------------
+            ---------------------
+            ---------------------
+            ---------------------
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=1 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=1 ======
+
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=2 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=2 ======
+
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=3 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=3 ======
+
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=4 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=4 ======
+
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=5 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=5 ======
+
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=6 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=6 ======
+
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=7 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=7 ======
+
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=8 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=8 ======
+
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=9 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=9 ======
+
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=10 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=10 ======
+
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=11 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=11 ======
+
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=12 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=12 ======
+
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=13 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=13 ======
+
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=14 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=14 ======
+
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=15 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=15 ======
+
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=16 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=16 ======
+
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=17 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=17 ======
+
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=18 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=18 ======
+
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=19 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=19 ======
+
+===== НАЧАЛО САЙТА http://ru.wordpress.org/page.php?id=20 ======
+<html><head><title>301 Moved Permanently</title></head><body><center><h1>301 Moved Permanently</h1></center><hr><center>nginx</center></body></html>
+===== КОНЕЦ САЙТА http://ru.wordpress.org/page.php?id=20 ======
+
+Time for Case2 work = 2948, dataSize = 2960
+
+Process finished with exit code 0
