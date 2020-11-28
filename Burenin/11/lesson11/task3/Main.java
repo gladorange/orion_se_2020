@@ -1,13 +1,9 @@
-package lesson10.task3;
+package lesson11.task3;
 
-import java.rmi.StubNotFoundException;
-import java.security.cert.CollectionCertStoreParameters;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.*;
-import java.util.function.Function;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Main {
 
