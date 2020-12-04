@@ -27,7 +27,6 @@ interface ActionProducer {
 
 class RandomGameActionProducer implements ActionProducer {
     public void play() {
-        //шоу матч без победителей :D
         while (characters.size() > 1) {
             for (final Character character : characters) {
                 SomeAction action = character.getClass() == Mage.class ? new MageAction(): new MonsterAction();
@@ -75,6 +74,7 @@ class RandomGameActionProducer implements ActionProducer {
 
 class ReplayActionProducer implements ActionProducer {
     public void play() {
+        //шоу матч без победителей :D
         for (SomeAction action : actions) {
             String print = action.getActingCharacter() + " наносит " + action.getDamage() + " единиц урона " + action.getTargetCharacter();
             if (action instanceof MageAction) {
@@ -91,6 +91,7 @@ class ReplayActionProducer implements ActionProducer {
         try {
             DocumentBuilder documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
             Document document = documentBuilder.parse(WizardWars.filename);
+            document.getDocumentElement().normalize();
             Node root = document.getDocumentElement();
             NodeList books = root.getChildNodes();
             for (int i = 0; i < books.getLength(); i++) {
@@ -98,6 +99,7 @@ class ReplayActionProducer implements ActionProducer {
                 if (book.getNodeType() != Node.TEXT_NODE) {
                     SomeAction action = book.getNodeName() == MageAction.class.getName() ? new MageAction() : new MonsterAction();
                     NodeList bookProps = book.getChildNodes();
+                    System.out.println(bookProps);
                     for(int j = 0; j < bookProps.getLength(); j++) {
                         Node bookProp = bookProps.item(j);
                         if (bookProp.getNodeType() != Node.TEXT_NODE) {
@@ -107,12 +109,16 @@ class ReplayActionProducer implements ActionProducer {
                             String value = bookProp.getChildNodes().item(0).getTextContent();
                             for (Field declaredField : action.getClass().getDeclaredFields()) {
                                 declaredField.setAccessible(true);
+                                if (Serialize.getFieldName(declaredField).equals(bookProp.getNodeName())) {
+                                    continue;
+                                }
                                 if (declaredField.getType().isAssignableFrom(int.class)) {
                                     declaredField.setInt(action, Integer.parseInt(value));
                                 } else {
                                     declaredField.set(action, value);
                                 }
                             }
+                            System.out.println(action);
                             actions.add(action);
                         }
                     }
