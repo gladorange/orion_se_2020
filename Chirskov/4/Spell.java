@@ -9,20 +9,21 @@ interface Spell {
         KillAllMonstersSpell, MigraineSpell, WallOfFire
     }
 
-    void castSpell(Character character, HashSet<Character> characters);
+    void castSpell(Character character, HashSet<Character> characters, MageAction action);
 }
 
 class HealingSpell implements Spell {
-    public void castSpell(Character currentCharacter, HashSet<Character> characters) {
+    public void castSpell(Character currentCharacter, HashSet<Character> characters, MageAction action) {
         if (!currentCharacter.checkIsAlive()) {
             return;
         }
         int heal = ThreadLocalRandom.current().nextInt(1, MAX_DAMAGE / 4);
         int healthAfterHeal = currentCharacter.getCurrentHealth() + heal;
-        currentCharacter.setCurrentHealth(healthAfterHeal > 100 ? Character.MAX_HEALTH : healthAfterHeal);
+        currentCharacter.setCurrentHealth(healthAfterHeal > Character.MAX_HEALTH ? Character.MAX_HEALTH : healthAfterHeal);
         System.out.println(new StringBuilder().append("Маг ").append(currentCharacter.getName())
                 .append(" исцелен на ").append(heal).append(". Теперь у него ")
                 .append(currentCharacter.getCurrentHealth()).append(" здоровья").toString());
+        action.setDamage(heal);
     }
 
     @Override
@@ -32,7 +33,7 @@ class HealingSpell implements Spell {
 }
 
 class LightingSpell implements Spell {
-    public void castSpell(Character currentCharacter, HashSet<Character> characters) {
+    public void castSpell(Character currentCharacter, HashSet<Character> characters, MageAction action) {
         final Character targetCharacter = (Character) characters.toArray()[ThreadLocalRandom.current().nextInt(0, characters.size())];
         if (!targetCharacter.checkIsAlive()) {
             return;
@@ -43,6 +44,8 @@ class LightingSpell implements Spell {
                 .append(" наносит ").append(targetCharacter.getName()).append(" ").append(damage)
                 .append(" урона молнией. ").append("Теперь у ").append(targetCharacter.getName())
                 .append(" ").append(targetCharacter.getCurrentHealth()).append(" здоровья").toString());
+        action.setDamage(damage);
+        action.setTargetCharacter(targetCharacter.getName());
     }
 
     @Override
@@ -52,8 +55,9 @@ class LightingSpell implements Spell {
 }
 
 class LightingToAllSpell implements Spell {
-    public void castSpell(Character character, HashSet<Character> characters) {
+    public void castSpell(Character character, HashSet<Character> characters, MageAction action) {
         int damage = ThreadLocalRandom.current().nextInt(1, MAX_DAMAGE / 2);
+        action.setDamage(damage);
         StringBuilder builder = new StringBuilder("Цепная молния ударяет по ");
         boolean isSomebodyDamaged = false;
         final Iterator iterator = characters.iterator();
@@ -66,6 +70,7 @@ class LightingToAllSpell implements Spell {
             targetCharacter.setCurrentHealth(targetCharacter.getCurrentHealth() - damage);
             builder.append(targetCharacter.getName()).append(", ").toString();
             isSomebodyDamaged = true;
+            action.setTargetCharacter(targetCharacter.getName());
         }
 
         builder.delete(builder.length() - 2, builder.length() - 1);
@@ -82,8 +87,9 @@ class LightingToAllSpell implements Spell {
 }
 
 class TouchOfFireSpell implements Spell {
-    public void castSpell(Character character, HashSet<Character> characters) {
+    public void castSpell(Character character, HashSet<Character> characters, MageAction action) {
         int damage = ThreadLocalRandom.current().nextInt(1, MAX_DAMAGE / 3);
+        action.setDamage(damage);
         StringBuilder builder = new StringBuilder("Огненное касание наносит урон по ");
         boolean isSomebodyDamaged = false;
         final Iterator iterator = characters.iterator();
@@ -97,6 +103,7 @@ class TouchOfFireSpell implements Spell {
             targetCharacter.setCurrentHealth(targetCharacter.getCurrentHealth() - damage);
             builder.append(targetCharacter.getName()).append(", ").toString();
             isSomebodyDamaged = true;
+            action.setTargetCharacter(targetCharacter.getName());
         }
         builder.delete(builder.length() - 2, builder.length() - 1);
         builder.append(System.getProperty("line.separator")).append("Все рядом с ")
@@ -113,7 +120,7 @@ class TouchOfFireSpell implements Spell {
 }
 
 class KillAllMonstersSpell implements Spell {
-    public void castSpell(Character character, HashSet<Character> characters) {
+    public void castSpell(Character character, HashSet<Character> characters, MageAction action) {
         final Iterator iterator = characters.iterator();
         while (iterator.hasNext()) {
             final Character targetCharacter = (Character) iterator.next();
@@ -121,8 +128,10 @@ class KillAllMonstersSpell implements Spell {
                 continue;
             }
             if (targetCharacter.getClass() == Monster.class) {
+                targetCharacter.setCurrentHealth(0);
                 System.out.println(new StringBuilder().append(targetCharacter.getName()).append(" убит").toString());
             }
+            action.setTargetCharacter(targetCharacter.getName());
         }
         System.out.println("Все монстры изгнаны!");
     }
@@ -134,8 +143,9 @@ class KillAllMonstersSpell implements Spell {
 }
 
 class MigraineSpell implements Spell {
-    public void castSpell(Character character, HashSet<Character> characters) {
+    public void castSpell(Character character, HashSet<Character> characters, MageAction action) {
         int damage = ThreadLocalRandom.current().nextInt(1, MAX_DAMAGE);
+        action.setDamage(damage);
         final Iterator iterator = characters.iterator();
         while (iterator.hasNext()) {
             final Character targetCharacter = (Character) iterator.next();
@@ -145,6 +155,7 @@ class MigraineSpell implements Spell {
             if (targetCharacter.getClass() == Mage.class) {
                 targetCharacter.setCurrentHealth(targetCharacter.getCurrentHealth() - damage);
             }
+            action.setTargetCharacter(targetCharacter.getName());
         }
         System.out.println(new StringBuilder().append("У всех магов заболела голова и они получают по ")
                 .append(damage).append(" урона").toString());
@@ -157,8 +168,9 @@ class MigraineSpell implements Spell {
 }
 
 class WallOfFire implements Spell {
-    public void castSpell(Character character, HashSet<Character> characters) {
+    public void castSpell(Character character, HashSet<Character> characters, MageAction action) {
         int damage = ThreadLocalRandom.current().nextInt(1, MAX_DAMAGE);
+        action.setDamage(damage);
         final Iterator iterator = characters.iterator();
         StringBuilder builder = new StringBuilder("Стена огня наносит урон ");
         boolean isSomebodyDamaged = false;
@@ -171,6 +183,7 @@ class WallOfFire implements Spell {
                 targetCharacter.setCurrentHealth(targetCharacter.getCurrentHealth() - damage);
                 builder.append(targetCharacter.getName()).append(", ").toString();
                 isSomebodyDamaged = true;
+                action.setTargetCharacter(targetCharacter.getName());
             }
         }
         builder.delete(builder.length() - 2, builder.length() - 1);

@@ -2,6 +2,5 @@ import java.lang.annotation.*;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
-public @interface XmlTypeName {
-    String value();
+public @interface SimpleComponent {
 }

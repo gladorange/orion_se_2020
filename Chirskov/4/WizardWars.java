@@ -1,56 +1,88 @@
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.lang.reflect.Field;
 import java.util.*;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class WizardWars {
-    public static HashSet<Character> characters = new HashSet<>();
-    public static void main(String[] args) {
-        WizardWars wars = new WizardWars();
-        wars.initCharacters();
-        wars.play();
-    }
+    private static boolean isReplay = false;
+    final static String filename = "Replay.xml";
+    final static String header = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n";
 
-    void initCharacters() {
-        Character.generateRandomNames();
-        int maxCount = Character.randomNames.size();
-        for (int i = 0; i < maxCount; ++i) {
-            Character character = getRandomCharacter();
-            character.setCurrentPosition(i);
-            characters.add(character);
+    public static void main(String[] args) throws IllegalAccessException, IOException {
+
+        ActionProducer producer;
+        if (new File(filename).exists()) {
+            if (askYesNoQuestion("Воспроизвести сохраненную игру? (Нет - начать новую)")) {
+                producer = new ReplayActionProducer();
+                isReplay = true;
+            } else {
+                producer = new RandomGameActionProducer();
+            }
+        } else {
+            producer = new RandomGameActionProducer();
+        }
+        producer.initCharacters();
+        producer.play();
+        if (!isReplay && askYesNoQuestion("Хотите сохранить реплей? Да\\Нет")) {
+            final String action = save(producer);
+            File replay = new File(filename);
+            if (replay.exists()) {
+                replay.delete();
+            }
+            BufferedWriter writer = new BufferedWriter(new FileWriter(filename, true));
+            writer.append(header)
+                    .append("<Replay>\n")
+                    .append(action)
+                    .append("</Replay>\n");
+            writer.close();
         }
     }
-    public Character getRandomCharacter() {
-        int characterNumber = ThreadLocalRandom.current().nextInt(0, Character.randomNames.size());
-        final String characterName = Character.randomNames.remove(characterNumber);
-        return ThreadLocalRandom.current().nextBoolean() ? Monster.getMonster(characterName) : new Mage(characterName);
-    }
 
-    void deleteDeadCharacters() {
-        final Iterator iterator = characters.iterator();
-        while (iterator.hasNext()) {
-            final Character character = (Character)iterator.next();
-            final boolean isDead = character.getCurrentHealth() <=0;
-            if (isDead) {
-                System.out.println(new StringBuilder().append(character.getName()).append(" убит").toString());
-                iterator.remove();
+    public static boolean askYesNoQuestion(String question) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(question);
+        while (true) {
+            String decision = scanner.nextLine();
+            switch (decision) {
+                case "да":
+                    return true;
+                case "нет":
+                    return false;
+                default:
+                    System.out.println("Вы ввели неверное значение");
             }
         }
     }
 
-    public void play() {
-        while (characters.size() > 1) {
-            final Iterator iterator = characters.iterator();
-            while (iterator.hasNext()) {
-                final Character character = (Character) iterator.next();
-                character.play(characters);
+    public static String save(ActionProducer producer) throws IllegalAccessException {
+        return serialize(producer.getActions());
+    }
+
+    public static String serialize(Collection<?> objects) throws IllegalAccessException {
+        StringBuilder builder = new StringBuilder();
+        if (isReplay)
+            return builder.toString();
+        for (Object object : objects) {
+            final Class<?> cls = object.getClass();
+            final String objectName = Serialize.getObjectName(cls);
+            builder.append("<" + objectName + ">\n");
+            addFields(cls.getDeclaredFields(), builder, object);
+            addFields(cls.getSuperclass().getDeclaredFields(), builder, object);
+            builder.append("</" + objectName + ">\n");
+        }
+        return builder.toString();
+    }
+
+    static void addFields(Field[] declaredFields, StringBuilder builder, Object object) throws IllegalAccessException {
+        for (Field declaredField : declaredFields) {
+            declaredField.setAccessible(true);
+            if (declaredField.isAnnotationPresent(XmlIgnore.class) || declaredField.get(object) == null) {
+                continue;
             }
-            deleteDeadCharacters();
-        }
-        if (characters.size() == 1) {
-            Character character = (Character)characters.toArray()[0];
-            System.out.println("Персонаж " + character.getName() + " всех победил");
-        }
-        else {
-            System.out.println("Победителей нет!");
+            final String fieldName = Serialize.getFieldName(declaredField);
+            builder.append("\t\t<" + fieldName + ">" + declaredField.get(object).toString() + "</" + fieldName + ">\n");
         }
     }
 }

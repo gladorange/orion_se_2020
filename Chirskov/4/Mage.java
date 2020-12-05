@@ -1,8 +1,9 @@
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.concurrent.ThreadLocalRandom;
 
+
 public class Mage extends Character {
+    @XmlIgnore
     static final int MAX_SPELLS_COUNT = 3;
     Spell[] spells = new Spell[MAX_SPELLS_COUNT];
     Mage(String name) {
@@ -10,16 +11,18 @@ public class Mage extends Character {
         initRandomSpells(spells);
     }
     @Override
-    void play(HashSet<Character> characters) {
+    void play(HashSet<Character> characters, SomeAction action) {
         int randomSpellNumber = ThreadLocalRandom.current().nextInt(0, MAX_SPELLS_COUNT);
         Spell spell = spells[randomSpellNumber];
-        System.out.println(this + " " + spell);
-        spell.castSpell(this, characters);
+        System.out.println(this + " читает заклинание " + spell);
+        action.setActingCharacter(name);
+        ((MageAction)action).setSpell(spell.getClass().getSimpleName());
+        spell.castSpell(this, characters, (MageAction)action);
     }
 
     @Override
     public String toString() {
-        return "Маг " + name + " читает заклинание";
+        return "Маг " + name;
     }
 
     static void initRandomSpells(Spell[] spells)
