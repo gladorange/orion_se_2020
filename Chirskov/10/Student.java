@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 public class Student {
     final static int MIN_LECTIONS_NUMBER = 2;
     final static int MAX_LECTIONS_NUMBER = 5;
-    final static int SORT_VALUE = 5;
+    final static int MIN_FILTER_VALUE = 5;
     String name;
     HashSet<Lection> lectionSet = new HashSet<>();
 
@@ -62,11 +62,11 @@ public class Student {
                 .anyMatch(lection -> lection.getName().contains(Lection.Lections.матанализ.name())))
                 .forEach(student -> System.out.println(student.getName()));
 
-        System.out.println(studentArrayList.stream().collect(Collectors.toMap(Student::getName, student -> student.getLectionSet().stream().count())));
+        System.out.println(studentArrayList.stream().collect(Collectors.toMap(Student::getName, student -> student.getLectionSet().size())));
 
         HashMap<String, Integer> map = new HashMap<>();
-        studentArrayList.forEach(student -> student.getLectionSet().forEach(lection -> map.put(lection.getName(), map.getOrDefault(lection.getName(), 0) + 1)));
-        System.out.println(map.entrySet().stream().filter(value -> value.getValue() > SORT_VALUE)
+        studentArrayList.forEach(student -> student.getLectionSet().forEach(lection -> map.merge(lection.getName(), 1, (prev, one) -> prev + one)));
+        System.out.println(map.entrySet().stream().filter(value -> value.getValue() > MIN_FILTER_VALUE)
                 .collect(Collectors.toMap(x -> x.getKey(), x -> x.getValue())));
 
         System.out.println(studentArrayList.stream().collect(Collectors.toMap(Student::getName, student -> student.getLectionSet().size()))

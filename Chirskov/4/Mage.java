@@ -10,6 +10,7 @@ public class Mage extends Character {
         super.name = name;
         initRandomSpells(spells);
     }
+
     @Override
     void play(HashSet<Character> characters, SomeAction action) {
         int randomSpellNumber = ThreadLocalRandom.current().nextInt(0, MAX_SPELLS_COUNT);

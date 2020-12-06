@@ -20,11 +20,11 @@ public class ParallelComputing {
         ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
         ExecutorService service = Executors.newFixedThreadPool(MAX_THREADS_COUNT);
         for (String url : listSet) {
-            InputStream is = new URL(url).openStream();
-            final Future<String> submit;
-            submit = service.submit(() -> new Scanner(is, "UTF-8").useDelimiter("\\A").next());
-            concurrentHashMap.put(url, submit.get());
-            is.close();
+            try(InputStream is = new URL(url).openStream()) {
+                final Future<String> submit;
+                submit = service.submit(() -> new Scanner(is, "UTF-8").useDelimiter("\\A").next());
+                concurrentHashMap.put(url, submit.get());
+            }
         }
         writeToFile(concurrentHashMap, "parallel.txt");
         service.shutdown();

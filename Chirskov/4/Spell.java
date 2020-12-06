@@ -13,6 +13,7 @@ interface Spell {
 }
 
 class HealingSpell implements Spell {
+    HealingSpell(){}
     public void castSpell(Character currentCharacter, HashSet<Character> characters, MageAction action) {
         if (!currentCharacter.checkIsAlive()) {
             return;
@@ -33,6 +34,7 @@ class HealingSpell implements Spell {
 }
 
 class LightingSpell implements Spell {
+    LightingSpell(){}
     public void castSpell(Character currentCharacter, HashSet<Character> characters, MageAction action) {
         final Character targetCharacter = (Character) characters.toArray()[ThreadLocalRandom.current().nextInt(0, characters.size())];
         if (!targetCharacter.checkIsAlive()) {
@@ -55,6 +57,7 @@ class LightingSpell implements Spell {
 }
 
 class LightingToAllSpell implements Spell {
+    LightingToAllSpell(){}
     public void castSpell(Character character, HashSet<Character> characters, MageAction action) {
         int damage = ThreadLocalRandom.current().nextInt(1, MAX_DAMAGE / 2);
         action.setDamage(damage);
@@ -87,6 +90,7 @@ class LightingToAllSpell implements Spell {
 }
 
 class TouchOfFireSpell implements Spell {
+    TouchOfFireSpell(){}
     public void castSpell(Character character, HashSet<Character> characters, MageAction action) {
         int damage = ThreadLocalRandom.current().nextInt(1, MAX_DAMAGE / 3);
         action.setDamage(damage);
@@ -120,6 +124,7 @@ class TouchOfFireSpell implements Spell {
 }
 
 class KillAllMonstersSpell implements Spell {
+    KillAllMonstersSpell(){}
     public void castSpell(Character character, HashSet<Character> characters, MageAction action) {
         final Iterator iterator = characters.iterator();
         while (iterator.hasNext()) {
@@ -143,6 +148,7 @@ class KillAllMonstersSpell implements Spell {
 }
 
 class MigraineSpell implements Spell {
+    MigraineSpell(){}
     public void castSpell(Character character, HashSet<Character> characters, MageAction action) {
         int damage = ThreadLocalRandom.current().nextInt(1, MAX_DAMAGE);
         action.setDamage(damage);
@@ -168,6 +174,7 @@ class MigraineSpell implements Spell {
 }
 
 class WallOfFire implements Spell {
+    WallOfFire(){}
     public void castSpell(Character character, HashSet<Character> characters, MageAction action) {
         int damage = ThreadLocalRandom.current().nextInt(1, MAX_DAMAGE);
         action.setDamage(damage);
