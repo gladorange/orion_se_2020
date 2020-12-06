@@ -28,12 +28,12 @@ public class ReplaySaver {
         }
         BufferedWriter writer = new BufferedWriter(new FileWriter(filename, true));
         writer.append(HEADER)
-                .append("< " + REPLAY + ">")
+                .append("<" + REPLAY + ">")
                 .append(action)
-                .append("< " + WizardWars.RESULT + ">")
+                .append("<" + WizardWars.RESULT + ">")
                 .append(winnerInfo)
-                .append("</ " + WizardWars.RESULT + ">\n")
-                .append("</ " + REPLAY + ">\n");
+                .append("</" + WizardWars.RESULT + ">\n")
+                .append("</" + REPLAY + ">\n");
         writer.close();
     }
 
@@ -43,7 +43,6 @@ public class ReplaySaver {
             final Class<?> cls = object.getClass();
             final String objectName = Serialize.getObjectName(cls);
             builder.append("<" + objectName + ">\n");
-            System.out.println(object);
             addFields(cls.getDeclaredFields(), builder, object);
             addFields(cls.getSuperclass().getDeclaredFields(), builder, object);
             builder.append("</" + objectName + ">\n");
@@ -54,7 +53,6 @@ public class ReplaySaver {
     static void addFields(Field[] declaredFields, StringBuilder builder, Object object) throws IllegalAccessException {
         for (Field declaredField : declaredFields) {
             declaredField.setAccessible(true);
-            System.out.println(declaredField);
             if (declaredField.isAnnotationPresent(XmlIgnore.class) || declaredField.get(object) == null) {
                 continue;
             }

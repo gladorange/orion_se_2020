@@ -1,8 +1,8 @@
 abstract class SomeAction {
 
     String actingCharacter;
-    int damage = 0;
-    String targetCharacter = "";
+    int damage;
+    String targetCharacter;
 
     public void setActingCharacter(String actingCharacter) {
         this.actingCharacter = actingCharacter;
