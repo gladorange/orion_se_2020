@@ -5,17 +5,16 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class ThreadServerSocket extends Thread {
     private final Socket inSocket;
+    private final String rootFolder;
 
-    public ThreadServerSocket(Socket inSocket) {
+    public ThreadServerSocket(Socket inSocket, String rootFolder) {
         this.inSocket = inSocket;
+        this.rootFolder = rootFolder;
         this.start();
     }
 
@@ -24,7 +23,7 @@ public class ThreadServerSocket extends Thread {
         try (BufferedReader input = new BufferedReader(new InputStreamReader(inSocket.getInputStream(), StandardCharsets.UTF_8)); PrintWriter output = new PrintWriter(inSocket.getOutputStream())) {
             String request = input.readLine();
             if (isGoodRequest(request, output)) {
-                toRequest(request, input, output);
+                sendResponse(request, input, output);
             }
         } catch (IOException | NoSuchAlgorithmException e) {
             e.printStackTrace();
@@ -47,20 +46,20 @@ public class ThreadServerSocket extends Thread {
         return true;
     }
 
-    private static void toRequest(String request, BufferedReader input, PrintWriter output) throws IOException, NoSuchAlgorithmException {
-        String authHeader = "Authorization: ";
-        String authLine = "";
-        String contentLengthHeader = "Content-Length: ";
+    private void sendResponse(String request, BufferedReader input, PrintWriter output) throws IOException, NoSuchAlgorithmException {
+        final String authHeader = "Authorization: Basic ";
+        String authorizationLine = "";
+        final String contentLengthHeader = "Content-Length: ";
         int postDataIndex = -1;
-        String ifNonMatchHeader = "If-None-Match: ";
+        final String ifNonMatchHeader = "If-None-Match: ";
         String ifNonMatchMD5 = "";
-        String ifModifiedSinceHeader = "If-Modified-Since: ";
+        final String ifModifiedSinceHeader = "If-Modified-Since: ";
         String ifModifiedSinceData = "";
-
         String line;
         while ((line = input.readLine()) != null && (line.length() != 0)) {
+            System.out.println(line);
             if (line.contains(authHeader)) {
-                authLine = line.substring(authHeader.length());
+                authorizationLine = line.substring(authHeader.length());
             } else if (line.contains(contentLengthHeader)) {
                 postDataIndex = Integer.parseInt(line.substring(contentLengthHeader.length()));
             } else if (line.contains(ifNonMatchHeader)) {
@@ -69,27 +68,19 @@ public class ThreadServerSocket extends Thread {
                 ifModifiedSinceData = line.substring(ifModifiedSinceHeader.length());
             }
         }
-
-        String rootFolder = getRootFolder();
         int endIndexOfRequest = request.indexOf("HTTP") - 1;
         String clippedRequest = request.substring(0, endIndexOfRequest);
         String[] requestMethods = {"GET", "POST", "DELETE"};
         for (String requestMethod : requestMethods) {
             if (request.contains(requestMethod)) {
-                String replacement = rootFolder + clippedRequest.substring(requestMethod.length() + 1);
+                String replacement = this.rootFolder + clippedRequest.substring(requestMethod.length() + 1);
                 String path = replacement.replace("/", "\\");
-                if (isCorrectlyAuthorization(authLine, output)) {
+                if (isCorrectlyAuthorization(authorizationLine, output)) {
                     switch (requestMethod) {
-                        case "GET" -> {
-                            if (isContainsNonMatchOrIfModifiedSinceHeader(ifNonMatchMD5, ifModifiedSinceData, output)) {
-                                toGET(output, path, ifNonMatchMD5, ifModifiedSinceData);
-                            }
-                        }
-                        case "POST" -> {
-                            if (isContainsContentLengthHeader(postDataIndex, output)) {
-                                toPOST(input, output, postDataIndex, path);
-                            }
-                        }
+                        case "GET" -> toGET(output, path, ifNonMatchMD5, ifModifiedSinceData);
+
+                        case "POST" -> toPOST(input, output, postDataIndex, path);
+
                         case "DELETE" -> toDELETE(output, path);
                     }
                 }
@@ -99,54 +90,28 @@ public class ThreadServerSocket extends Thread {
 
     static boolean isCorrectlyAuthorization(String authorizationLine, PrintWriter output) throws IOException {
         if (authorizationLine.equals("")) {
-            output.println("HTTP/1.1 400 Bad Request");
+            output.println("HTTP/1.1 401 Bad Request");
             output.println("Content-Type: text/html; charset=utf-8");
+            output.println("WWW-Authenticate: Basic realm=\"User Visible Realm\"");
             output.println("");
-            output.println("Не указаны необходимые заголовки.");
+            output.println("Не указаны данные для авторизации.");
             return false;
         }
-        String login = authorizationLine.substring(0, authorizationLine.indexOf(','));
-        String password = authorizationLine.substring(authorizationLine.indexOf(',') + 1);
+        String loginAndPassword = new String(Base64.getDecoder().decode(authorizationLine.getBytes()));
+        String[] authorizationData = loginAndPassword.split(":");
+        String login = authorizationData[0];
+        String password = authorizationData[1];
         String config = new String(Files.readAllBytes(Paths.get("configuration.txt")));
         List<String> lines = config.lines().collect(Collectors.toList());
         if (!lines.get(0).equals(login) || !lines.get(1).equals(password)) {
             output.println("HTTP/1.1 401 Unauthorized");
             output.println("Content-Type: text/html; charset=utf-8");
+            output.println("WWW-Authenticate: Basic realm=\"User Visible Realm\"");
             output.println("");
             output.println("Логин или пароль неверны.");
             return false;
         }
         return true;
-
-    }
-
-    static boolean isContainsNonMatchOrIfModifiedSinceHeader(String ifNonMatchMD5, String ifModifiedSinceData, PrintWriter output) {
-        if (ifNonMatchMD5.equals("") || ifModifiedSinceData.equals("")) {
-            output.println("HTTP/1.1 400 Bad Request");
-            output.println("Content-Type: text/html; charset=utf-8");
-            output.println("");
-            output.println("Не указаны необходимые заголовки.");
-            return false;
-        }
-        return true;
-    }
-
-    static boolean isContainsContentLengthHeader(int postDataIndex, PrintWriter output) {
-        if (postDataIndex == -1) {
-            output.println("HTTP/1.1 400 Bad Request");
-            output.println("Content-Type: text/html; charset=utf-8");
-            output.println("");
-            output.println("Не указаны необходимые заголовки.");
-            return false;
-        }
-        return true;
-    }
-
-    static String getRootFolder() throws IOException {
-        String config = new String(Files.readAllBytes(Paths.get("configuration.txt")));
-        List<String> lines = config.lines().collect(Collectors.toList());
-        int rootFolderLine = 2;
-        return lines.get(rootFolderLine);
     }
 
     static String getMD5(String text) throws NoSuchAlgorithmException {
@@ -207,7 +172,6 @@ public class ThreadServerSocket extends Thread {
                     output.println("HTTP/1.1 200 OK");
                     output.println("Content-Type: text/html; charset=utf-8");
                     output.println("Last-Modified: " + date.toString());
-                    System.out.println(date.toString());
                     output.println("Etag: " + etag);
                     output.println("");
                     output.println(content);
